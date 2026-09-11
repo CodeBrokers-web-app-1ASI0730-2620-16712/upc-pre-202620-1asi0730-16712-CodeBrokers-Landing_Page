@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>VitaLink | Monitoreo Preventivo para Profesionales de la Salud</title>
+    <meta name="description"
+        content="VitaLink facilita el monitoreo preventivo de pacientes mediante datos continuos, alertas inteligentes y herramientas integradas para profesionales de la salud y familias.">
+    <meta name="keywords"
+        content="VitaLink, monitoreo preventivo, monitoreo de pacientes, seguimiento de pacientes, alertas de salud, profesionales de la salud, tecnología médica">
+    <meta name="author" content="CodeBrokers">
+
+    <meta property="og:title" content="VitaLink | Monitoreo Preventivo para Profesionales de la Salud">
+    <meta property="og:description"
+        content="Monitoreo preventivo, alertas inteligentes y datos continuos para facilitar el seguimiento de pacientes.">
+    <meta property="og:image" content="https://italink.com/assets/images/og-cover.png">
+    <meta property="og:url" content="https://vitalink.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-audience="profesionales"> 
+    <header class="navbar-fixed">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <a href="#hero" class="brand-logo">
+                    <img src="assets/logo-vitalink.png" alt="VitaLink Logo" class="brand-logo-img">
+                </a>
+            </div>
+            <nav class="nav-links" id="nav-menu">
+                <a href="#ventajas-clinicas" class="nav-item">Ventajas Clínicas</a>
+                <a href="#alertas" class="nav-item">Alertas</a>
+                <a href="#planes" class="nav-item">Planes</a>
+                <a href="#seguridad-datos" class="nav-item">Seguridad</a>
+            </nav>
+
+            <div class="audience-selector" role="group" aria-label="Cambiar segmento de usuario">
+                <button class="segment-btn active" type="button" data-audience-option="profesionales"
+                    aria-pressed="true">
+                    <span class="material-symbols-outlined">stethoscope</span>
+                    Médicos
+                </button>
+                <button class="segment-btn" type="button" data-audience-option="pacientes" aria-pressed="false">
+                    <span class="material-symbols-outlined">family_home</span>
+                    Familiares
+                </button>
+            </div>
+
+            <div class="language-switcher" role="group" aria-label="Cambiar idioma">
+                <button class="language-btn active" type="button" data-language-option="es" aria-pressed="true">ES</button>
+                <button class="language-btn" type="button" data-language-option="en" aria-pressed="false">EN</button>
+            </div>
+
+            <div class="cta-container">
+                <a href="#unirse" class="btn btn-primary btn-sm" id="header-cta-btn">Unirme como proveedor</a>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+    
+        <section id="hero" class="hero-section">
+            <div class="hero-container max-width-container">
+                <div class="hero-content">
+                    <!-- VISTA PROFESIONAL (Default) -->
+                    <div class="view-content view-profesionales active">
+                        <h1>Optimice el seguimiento preventivo con <span class="highlight-text">monitoreo de precisión
+                                24/7.</span></h1>
+                        <p>Reduzca reingresos hospitalarios y mejore el control de pacientes crónicos con alertas en
+                            tiempo real e integración con su flujo clínico. Tome decisiones con datos de alta frecuencia
+                            en una sola plataforma.</p>
+                        <div class="hero-actions">
+                            <a href="#unirse" class="btn btn-primary btn-lg">Unirme como proveedor <span
+                                    class="material-symbols-outlined">arrow_forward</span></a>
+                            <a href="#ventajas-clinicas" class="btn btn-outline btn-lg">Solicitar información
+                                técnica</a>
+                        </div>
+                    </div>
+
+
+                    <div class="view-content view-pacientes">
+                        <h1>La tranquilidad de saber que tus padres están bien, <span class="highlight-text">sin
+                                interrumpir su día.</span></h1>
+                        <p>Monitoreo automático de signos vitales que avisa a la familia y a la clínica si algo no está
+                            normal. Todos ven el mismo estado actualizado, sin depender de llamadas constantes ni de que
+                            alguien recuerde avisar.</p>
+                        <div class="hero-actions">
+                            <a href="#unirse" class="btn btn-primary btn-lg">Comenzar ahora <span
+                                    class="material-symbols-outlined">arrow_forward</span></a>
+                            <a href="#ventajas-clinicas" class="btn btn-outline btn-lg">Conocer cómo funciona</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-metrics">
+                        <div class="metric-item">
+                            <strong class="metric-number">+99.8%</strong>
+                            <span class="metric-label">Precisión de Alertas</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <strong class="metric-number">24/7</strong>
+                            <span class="metric-label">Telemetría Continua</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <strong class="metric-number">+10k</strong>
+                            <span class="metric-label">Pacientes Monitoreados</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image-placeholder">
+                        <img src="assets/FotoHero.jpeg" alt="VitaLink Hero Preview" class="hero-custom-img"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder-box" style="display:none;">
+                            <span class="material-symbols-outlined">image</span>
+                            <p>Espacio reservado para tu imagen del Hero (lado derecho)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
