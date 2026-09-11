@@ -235,3 +235,71 @@ document.addEventListener('DOMContentLoaded', () => {
             card.querySelector('strong').textContent = data[1];
             card.querySelector('small').textContent = data[2];
         });
+        setText('#seguridad-datos .section-header h2', text.security[0]);
+        setText('#seguridad-datos .section-header p', text.security[1]);
+        setTwoLineCards('.security-card', text.securityCards);
+
+        const cta = isFamily ? text.ctaFamily : text.ctaPro;
+        setHTML('#cta-title', cta[0]);
+        setText('#cta-desc', cta[1]);
+        setHTML('#cta-action-btn', cta[2]);
+
+        setText('.footer-brand p', text.footer[0]);
+        setAllText('.footer-links-col h4', text.footer.slice(1, 4));
+        setAllText('.footer-links a', text.footer.slice(4, 12));
+        setText('.footer-bottom p', text.footer[12]);
+
+        languageButtons.forEach((button) => {
+            const active = button.dataset.languageOption === currentLanguage;
+            button.classList.toggle('active', active);
+            button.setAttribute('aria-pressed', String(active));
+        });
+    }
+
+    function switchAudienceView(audience) {
+        body.setAttribute('data-audience', audience);
+        document.querySelectorAll('.view-content, .pricing-grid, .preview-card-wrapper').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll(`.view-${audience}`).forEach(el => el.classList.add('active'));
+        segmentButtons.forEach((button) => {
+            const active = button.dataset.audienceOption === audience;
+            button.classList.toggle('active', active);
+            button.setAttribute('aria-pressed', String(active));
+        });
+        applyLanguage();
+    }
+
+    segmentButtons.forEach(button => {
+        button.addEventListener('click', () => switchAudienceView(button.dataset.audienceOption));
+    });
+
+    languageButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            currentLanguage = button.dataset.languageOption;
+            applyLanguage();
+        });
+    });
+
+    const navbar = document.querySelector('.navbar-fixed');
+    window.addEventListener('scroll', () => {
+        navbar.style.boxShadow = window.scrollY > 20 ? '0 10px 30px rgba(0, 50, 40, 0.08)' : 'none';
+        navbar.style.padding = window.scrollY > 20 ? '4px 0' : '0';
+    });
+
+    const activeButton = document.querySelector('[data-audience-option].active');
+    switchAudienceView(activeButton ? activeButton.dataset.audienceOption : 'profesionales');
+
+    // --- Mobile Navigation Toggle ---
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navbarContainer = document.querySelector('.navbar-container');
+
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = navbarContainer.classList.toggle('nav-open');
+            mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+            const icon = mobileMenuToggle.querySelector('.material-symbols-outlined');
+            if (icon) {
+                icon.textContent = isOpen ? 'close' : 'menu';
+            }
+        });
